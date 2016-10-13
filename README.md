@@ -1,5 +1,7 @@
 # Objectifier
 
+[![Build Status](https://travis-ci.org/wiggly/objectifier.svg?branch=master)](https://travis-ci.org/wiggly/objectifier)
+
 De-serialise plain hashes into objects.
 
 The rationale behind this is to be able to take input from external sources such as REST calls or log files and turn them into graphs of objects or find out why they cannot be tranformed.
