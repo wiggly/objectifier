@@ -35,18 +35,6 @@ module Objectifier
       true
     end
 
-    def pp(indent = "")
-      next_indent = "#{indent}  "
-      str = "#{indent} #{@scope} {\n"
-      str << @rules.values.map { |r| r.pp(next_indent) }.join("\n")
-      str << "\n#{indent}}\n"
-      str
-    end
-
-    def to_s
-      pp("")
-    end
-
     # examine parameters and return a hash of massaged data or an error results
     def call(parameters)
 

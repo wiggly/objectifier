@@ -22,13 +22,8 @@ module Objectifier
       elsif key_present(parameters)
         transform(key_value(parameters))
       else
-        # TODO: this is not a failure...
         SuccessResult.new(@name)
       end
-    end
-
-    def pp(indent = "")
-      "#{indent} #{to_s}"
     end
 
     def to_s

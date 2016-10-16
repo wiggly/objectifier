@@ -27,10 +27,6 @@ module Objectifier
       end
     end
 
-    def pp(indent = "")
-      "#{indent} #{to_s}"
-    end
-
     protected
 
     def key_present(parameters)
