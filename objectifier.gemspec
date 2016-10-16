@@ -24,11 +24,16 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
 
+  # NB: we require this so that listen does not require a higher version since higher
+  # version currently breaks guard
+  spec.add_development_dependency "celluloid", "~> 0.15.0"
+
   # NB: we require this so that guard does not require a higher version since higher
   # versions require ruby_dep which requires ruby 2.2.x as a runtime dependency...
   spec.add_development_dependency "listen", "~> 2.7.0"
 
-  # NB: we require this so that simplecov doesn't pull in json 2.x since that requires ruby 2.x.x
+  # NB: we require this so that simplecov doesn't pull in json 2.x since that requires
+  # ruby 2.x.x
   spec.add_development_dependency "json", "~> 1.0"
 
   spec.add_development_dependency "guard", "~> 2.0"
