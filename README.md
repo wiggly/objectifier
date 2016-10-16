@@ -1,5 +1,6 @@
 # Objectifier
 
+[![Gem Version](https://badge.fury.io/rb/objectifier.svg)](https://badge.fury.io/rb/objectifier)
 [![Build Status](https://travis-ci.org/wiggly/objectifier.svg?branch=master)](https://travis-ci.org/wiggly/objectifier)
 
 De-serialise plain hashes into objects.
