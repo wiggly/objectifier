@@ -20,12 +20,12 @@ module Objectifier
       end
     end
 
-    def item(name, **args)
+    def item(name, args)
       @rules[name.to_s] = ScalarValue.new(name, args)
       true
     end
 
-    def items(name, **args)
+    def items(name, args)
       @rules[name.to_s] = ArrayValue.new(name, args)
       true
     end

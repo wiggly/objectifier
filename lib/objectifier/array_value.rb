@@ -4,7 +4,7 @@ module Objectifier
   class ArrayValue
     attr_reader :name, :type
 
-    def initialize(name, **args)
+    def initialize(name, args)
       raise ArgumentError, "name required" if name.nil?
       raise ArgumentError, "type required" unless args[:type]
 
