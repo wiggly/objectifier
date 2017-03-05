@@ -8,7 +8,7 @@ describe Objectifier::ArrayValue do
       required: required,
     }
   }
-  let(:type) { String }
+  let(:type) { :string }
   let(:required) { false }
 
   describe "::new" do

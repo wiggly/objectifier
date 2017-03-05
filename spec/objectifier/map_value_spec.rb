@@ -24,7 +24,7 @@ describe Objectifier::MapValue do
       context "that is required" do
         subject {
           described_class.new(name) do
-            item :foo, type: String, required: true
+            item :foo, type: :string, required: true
           end
         }
 
@@ -34,7 +34,7 @@ describe Objectifier::MapValue do
       context "that is not required" do
         subject {
           described_class.new(name) do
-            item :foo, type: String, required: false
+            item :foo, type: :string, required: false
           end
         }
 
@@ -63,7 +63,7 @@ describe Objectifier::MapValue do
     context "when the value is required" do
       subject {
         described_class.new(name) do
-          item :bar, type: String, required: true
+          item :bar, type: :string, required: true
         end.call(parameters)
       }
 
@@ -97,7 +97,7 @@ describe Objectifier::MapValue do
     context "when the value is not required" do
       subject {
         described_class.new(name) do
-          item :bar, type: String, required: false
+          item :bar, type: :string, required: false
         end.call(parameters)
       }
 

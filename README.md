@@ -32,27 +32,27 @@ Create custom transformers, create an objectifier and use it to de-serialise has
 ```
   require 'objectifier'
   require 'money'
-  
+
   # Add a custom tranformer for Money values
   Objectifier.factories.add_type(
-    Money,
+    :money,
     ->(name, value) {
       Objectifier::ValueResult.new(name, Money.new(value["amount"], value["code"]))
     })
 
   # define an objectifier that can be used to de-serialise a given format
   obj = Objectifier.define do
-    item :name, type: String, required: false
+    item :name, type: :string, required: false
 
-    items :accounts, type: Integer
+    items :accounts, type: :integer
 
-    item :budget, type: Money
+    item :budget, type: :money
 
-    item :length, type: Integer, required: false
+    item :length, type: :integer, required: false
 
     map :activity do
-      item :clicks, type: Integer
-      item :ctr, type: Float
+      item :clicks, type: :integer
+      item :ctr, type: :float
     end
   end
 

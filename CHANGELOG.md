@@ -2,11 +2,17 @@
 
 ## UNRELEASED
 
+
+## 0.3.0 2017-03-07
+
 ### Added
 Tests for built-in transformer functions
 
 ### Changed
 Floating point transformer to not silently convert strings to zero
+
+### Changed
+Transformer type keys to be symbols instead of constants
 
 
 ## 0.2.0 2016-10-16

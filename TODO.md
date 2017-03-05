@@ -4,8 +4,6 @@
 
 We should allow some things to be nil. The key is present but the value may be nil instead of either fully required or not required.
 
-## Add transformers for boolean values
-
 ## Decide whether or not using class names for the transformer types is a good idea (probably not)
 
 ## Add Struct in addition to Map types

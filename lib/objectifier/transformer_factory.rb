@@ -5,11 +5,22 @@ module Objectifier
     def initialize
       @t = Hash.new { |h,k| raise "unknown type #{@type}" }
 
-      @t[Symbol] = ->(name, value) { ValueResult.new(name, value.to_sym) }
+      @t[:boolean] = lambda do |name, value|
+        case value
+        when true, 'true', 1, '1'
+          ValueResult.new(name, true)
+        when false, 'false', 0, '0'
+          ValueResult.new(name, false)
+        else
+          ErrorResult.err(name, 'not boolean')
+        end
+      end
 
-      @t[String] = ->(name, value) { ValueResult.new(name, value.to_s) }
+      @t[:symbol] = ->(name, value) { ValueResult.new(name, value.to_sym) }
 
-      @t[Integer] = ->(name, value) do
+      @t[:string] = ->(name, value) { ValueResult.new(name, value.to_s) }
+
+      @t[:integer] = lambda do |name, value|
         begin
           ValueResult.new(name, Integer(value))
         rescue => e
@@ -17,11 +28,11 @@ module Objectifier
         end
       end
 
-      @t[Fixnum] = @t[Integer]
+      @t[:fixnum] = @t[:integer]
 
-      @t[Bignum] = @t[Integer]
+      @t[:bignum] = @t[:integer]
 
-      @t[Float] = ->(name, value) do
+      @t[:float] = lambda do |name, value|
         begin
           ValueResult.new(name, Float(value))
         rescue => e
