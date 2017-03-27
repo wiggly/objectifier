@@ -56,7 +56,7 @@ module Objectifier
           v.value
         end
 
-        ValueResult.new(@scope, xr)
+        ValueResult.new(@name, xr)
       else
         errors.reduce(ErrorResult.new) { |total, err| total.merge(err) }.scope(@scope)
       end

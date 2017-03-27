@@ -22,7 +22,7 @@ require 'money'
 #
 
 Objectifier.factories.add_type(
-  Money,
+  :money,
   ->(name, value) {
     return Objectifier::ErrorResult.err(name, "'value' not present") unless value.key?("amount")
     return Objectifier::ErrorResult.err(name, "'code' not present") unless value.key?("code")
@@ -31,9 +31,9 @@ Objectifier.factories.add_type(
   })
 
 obj = Objectifier.define do
-  item :id, type: Integer
-  item :balance, type: Money
-  item :credit_limit, type: Money, required: false
+  item :id, type: :integer
+  item :balance, type: :money
+  item :credit_limit, type: :money, required: false
 end
 
 puts "Objectifier"

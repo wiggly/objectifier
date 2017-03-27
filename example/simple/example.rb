@@ -23,12 +23,13 @@ require 'pp'
 #
 
 obj = Objectifier.define do
-  item :name, type: String
-  item :email, type: String
-  item :dob, type: String, required: false # TODO: add date/time to the set of builtin transformers
+  item :name, type: :string
+  item :email, type: :string
+  item :dob, type: :string, required: false # TODO: add date/time to the set of builtin transformers
+  items :skills, type: :string, required: false
   map :location do
-    item :lat, type: Float
-    item :lng, type: Float
+    item :lat, type: :float
+    item :lng, type: :float
   end
 end
 
@@ -40,6 +41,7 @@ parameters = {
   "name" => "John Doe",
   "email" => "john.doe@example.com",
   "dob" => "1964-03-21",
+  "skills" => ["hinting", "fishing"],
   "location" => {
     "lat" => 51.5077,
     "lng" => -0.1279,

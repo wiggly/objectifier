@@ -2,6 +2,12 @@
 
 ## UNRELEASED
 
+### Fixed
+Array values were being added to maps with 'nil' as their key instead of their name.
+
+### Fixed
+Example code was still using old style constants for types.
+
 
 ## 0.3.0 2017-03-07
 
