@@ -2,6 +2,9 @@
 
 ## UNRELEASED
 
+
+## 0.4.0 2017-03-27
+
 ### Fixed
 Array values were being added to maps with 'nil' as their key instead of their name.
 
