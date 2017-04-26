@@ -2,6 +2,10 @@
 
 ## UNRELEASED
 
+## 0.5.0 2017-04-26
+
+### Changed
+Changed map value to always return a map even if no optional parameters were present
 
 ## 0.4.0 2017-03-27
 
