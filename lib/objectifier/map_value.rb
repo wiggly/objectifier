@@ -54,14 +54,9 @@ module Objectifier
 
       if errors.empty?
         values = ok.select(&:value?)
-
-        if values.empty?
-          SuccessResult.new(@scope)
-        else
-          ValueResult.new(
-            @scope,
-            Hash[values.map { |v| [ v.name, v.value ] }])
-        end
+        ValueResult.new(
+          @scope,
+          Hash[values.map { |v| [ v.name, v.value ] }])
       else
         errors.reduce(ErrorResult.new) { |total, err| total.merge(err) }.scope(@scope)
       end

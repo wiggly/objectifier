@@ -124,7 +124,9 @@ describe Objectifier::MapValue do
         }
 
         it { is_expected.to be_success }
-        it { is_expected.not_to be_value}
+        it "contains an empty map" do
+          expect(subject.value).to eq({})
+        end
       end
     end
   end
